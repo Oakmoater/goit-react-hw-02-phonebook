@@ -6,7 +6,7 @@ const ContactList = ({ contacts }) => {
     <ul className="contact-list">
         {contacts.map((contact) => (
         <Contact
-            id={contact.avatar}
+            id={contact.id}
             name={contact.name}
             number={contact.number}
         />
