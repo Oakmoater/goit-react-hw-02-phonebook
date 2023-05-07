@@ -2,7 +2,7 @@
 
 const ContactForm = ({addContact}) => {
     return (
-        <form onSubmit={addContact}>
+    <form onSubmit={addContact}>
         <span>Name</span>
         <input
             type="text"
