@@ -17,10 +17,10 @@ export class App extends Component {
 
   addContact = (e) => {
     e.preventDefault();
-    const { name, number } = e.target.elements
-    const isDuplicateName = this.contacts.some(contact => contact.name === name);
+    const { name, number } = e.target.elements;
+    const isDuplicateName = this.state.contacts.some(contact => contact.name === name.value);
     if (isDuplicateName) {
-      alert(`${} is already in contacts`)
+      alert(`${name.value} is already in contacts`);
     } else {
       const newContact = {
         id: nanoid(),
@@ -31,6 +31,11 @@ export class App extends Component {
         contacts: [...prevState.contacts, newContact]
       }));
     }
+    this.form.reset();
+  }
+
+  removeContact = (e) => {
+    console.log(e.target.id)
   }
 
   addFilter = e => {
@@ -44,7 +49,7 @@ export class App extends Component {
         <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter addFilter={this.addFilter} />
-        <ContactList contacts={this.state.contacts} filter={this.state.filter} />
+        <ContactList contacts={this.state.contacts} filter={this.state.filter} deleter={this.removeContact} />
       </>
     )
   };
