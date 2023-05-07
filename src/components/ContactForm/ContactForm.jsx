@@ -1,8 +1,8 @@
 // import PropTypes from 'prop-types';
 
-const ContactForm = () => {
+const ContactForm = ({addContact}) => {
     return (
-    <div>
+        <form onSubmit={addContact}>
         <span>Name</span>
         <input
             type="text"
@@ -19,8 +19,8 @@ const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
         />
-        <button type="button" name="Add contact">Add contact</button>
-    </div>
+        <button type="submit" name="Add contact">Add contact</button>
+    </form>
     )
 };
 

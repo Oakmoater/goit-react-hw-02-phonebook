@@ -8,6 +8,11 @@ export class App extends Component {
   name: '',
   number: ''
 }
+  addContact = (e) => {
+    e.preventDefault();
+    console.log(e.target.elements.name.value);
+    console.log(e.target.elements.number.value);
+  }
 
   generateId = nanoid()
 
@@ -15,7 +20,7 @@ export class App extends Component {
     return (
       <>
         <h1>Phonebook</h1>
-        <ContactForm />
+        <ContactForm addContact={this.addContact} />
       </>
     )
   };
