@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Filter = ({addFilter}) => {
     return (
@@ -6,8 +6,8 @@ const Filter = ({addFilter}) => {
     )
 };
 
-// Filter.propTypes = {
-    
-// }
+Filter.propTypes = {
+    addFilter: PropTypes.func.isRequired
+}
 
 export default Filter;
